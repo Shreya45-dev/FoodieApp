@@ -1,0 +1,37 @@
+const mongoose=require('mongoose');
+const foodPartnerSchema=new mongoose.Schema({
+    name:{
+        type:String,
+        //required:true
+    },
+    email:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    ProfilePicture:{
+        type:String
+    },
+    restaurantName:{
+        type:String
+    },
+    alldishes:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"restaurantwithdish"
+
+    }],
+    Address:{
+        type:String
+    },
+    City:{
+        type:String
+    },
+   
+})
+  
+const foodPartnerModel=mongoose.model("foodpartner",foodPartnerSchema)
+module.exports=foodPartnerModel
