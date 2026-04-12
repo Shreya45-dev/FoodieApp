@@ -87,7 +87,7 @@ const Showfpss = ({ foodPartnerId }) => {
     const fetchOrders = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/food/restaurant-orders/${foodPartnerId}`,
+          `https://foodieapp-ve9r.onrender.com/api/food/restaurant-orders/${foodPartnerId}`,
           { withCredentials: true }
         );
         setOrders(res.data.orders || []);
@@ -102,7 +102,7 @@ const Showfpss = ({ foodPartnerId }) => {
   useEffect(() => {
     if (!foodPartnerId) return;
 
-    const socket = io("http://localhost:3000", {
+    const socket = io("https://foodieapp-ve9r.onrender.com", {
       withCredentials: true,
       transports: ["websocket"], // optional, but stability ke liye
     });

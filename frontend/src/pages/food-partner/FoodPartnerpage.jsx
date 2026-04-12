@@ -182,7 +182,7 @@ const FoodPartnerpage = () => {
     const fetchDish = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/food-partner/dish/${id}`,
+          `https://foodieapp-ve9r.onrender.com/api/food-partner/dish/${id}`,
           { withCredentials: true }
         );
         setdata(response.data.dish);
@@ -199,7 +199,7 @@ const FoodPartnerpage = () => {
     const fetchOrder = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/food/restaurant-orders/${id}`,
+          `https://foodieapp-ve9r.onrender.com/api/food/restaurant-orders/${id}`,
           { withCredentials: true }
         );
         setorder(res.data.orders);
@@ -214,7 +214,7 @@ const FoodPartnerpage = () => {
   const updateStatus = async (orderId, status) => {
     try {
       await axios.put(
-        `http://localhost:3000/api/food/api/order/${orderId}`,
+        `https://foodieapp-ve9r.onrender.com/api/food/api/order/${orderId}`,
         { status },
         { withCredentials: true }
       );
@@ -222,7 +222,7 @@ const FoodPartnerpage = () => {
 
       // Refresh orders
       const res = await axios.get(
-        `http://localhost:3000/api/food/restaurant-orders/${id}`,
+        `https://foodieapp-ve9r.onrender.com/api/food/restaurant-orders/${id}`,
         { withCredentials: true }
       );
       setorder(res.data.orders);

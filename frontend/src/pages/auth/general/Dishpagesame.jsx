@@ -16,7 +16,7 @@ const Dishpagesame = () => {
     useEffect(() => {
         const find=async()=>{
             try{
-        const response=await axios.get(`http://localhost:3000/api/food/samedish/${name}`,{
+        const response=await axios.get(`https://foodieapp-ve9r.onrender.com/api/food/samedish/${name}`,{
             withCredentials:true})
             console.log(response.data.dishes)
             console.log(response.data.message)
@@ -42,7 +42,7 @@ find()
           foodId: item.id,  // this must match your Mongoose schema
           qty:item.qty
         }));
-            const response=await axios.post('http://localhost:3000/api/food/orderfood/',{
+            const response=await axios.post('https://foodieapp-ve9r.onrender.com/api/food/orderfood/',{
               items:formattedItems,
                 
               total:500,

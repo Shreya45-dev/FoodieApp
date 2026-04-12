@@ -55,7 +55,7 @@ const Prrofile = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/food-partner/${id}`, { withCredentials: true })
+    axios.get(`https://foodieapp-ve9r.onrender.com/api/food-partner/${id}`, { withCredentials: true })
       .then(response => {
         
        setProfile(response.data.foodPartner)

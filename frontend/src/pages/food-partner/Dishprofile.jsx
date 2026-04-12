@@ -21,7 +21,7 @@ const Dishprofile = () => {
 
   const fetchDish=async()=>{
       try{
-        const response=await axios.get(`http://localhost:3000/api/food-partner/dish/${id}`,
+        const response=await axios.get(`https://foodieapp-ve9r.onrender.com/api/food-partner/dish/${id}`,
           {withCredentials:true}
         )
         setdish(response.data.dish)
@@ -49,7 +49,7 @@ const Dishprofile = () => {
       
 
     }));
-        const response=await axios.post('http://localhost:3000/api/food/orderfood',{
+        const response=await axios.post('https://foodieapp-ve9r.onrender.com/api/food/orderfood',{
           items:formattedItems,
            foodpartner:id,
           total:total,

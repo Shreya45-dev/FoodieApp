@@ -9,7 +9,7 @@ const Oyee = () => {
     useEffect(() => {
     const allget=async()=>{
         try{
-        const response=await axios.get('http://localhost:3000/api/food/getorderfood',{
+        const response=await axios.get('https://foodieapp-ve9r.onrender.com/api/food/getorderfood',{
             withCredentials:true
 
         })
@@ -24,7 +24,7 @@ const Oyee = () => {
           console.log(data);
     const latestorder=async()=>{
       try{
-        const res=await axios.get('http://localhost:3000/api/food/latestorder',{
+        const res=await axios.get('https://foodieapp-ve9r.onrender.com/api/food/latestorder',{
           withCredentials:true
         })
         setlatestdata(res.data.orderss)

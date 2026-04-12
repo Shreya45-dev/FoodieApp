@@ -64,7 +64,7 @@ const FoodPartnerLogin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/food-partner/login",
+        "https://foodieapp-ve9r.onrender.com/api/auth/food-partner/login",
         { email, password },
         { withCredentials: true }
       )

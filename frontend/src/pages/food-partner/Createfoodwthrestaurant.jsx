@@ -94,7 +94,7 @@ const Createfoodwthrestaurant = () => {
         formData.append("cost", cost)
         try {
             const response = await axios.post(
-                "http://localhost:3000/api/food-partner/createrestaurantdish",
+                "https://foodieapp-ve9r.onrender.com/api/food-partner/createrestaurantdish",
                 formData,
                 {
                     withCredentials: true,

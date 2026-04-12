@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("Socket disconnected:", socket.id);
   });
-});
+}); 
 
 // 🔹 6️⃣ Start server
 const PORT = process.env.PORT ;
