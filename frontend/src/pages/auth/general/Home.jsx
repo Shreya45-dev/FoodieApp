@@ -144,7 +144,7 @@ export default Home;
 
 
 */
-
+/*
 
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
@@ -261,7 +261,7 @@ const Home = () => {
   </i>
 </div>
 <div className="h-20">
-  {/* saara baaki content */}
+
 </div>
              <div className="flex justify-center items-center">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7TH5E9B6zrUEcGiI6s0YZllGGXL9Ye9Qyg&s"/>
@@ -323,4 +323,136 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home*/
+
+
+import React, { useEffect, useRef, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "./i.css";
+
+const Home = () => {
+  const [data, setData] = useState([]);
+  const [videos, setVideos] = useState([]);
+
+  const videoRefs = useRef(new Map());
+
+  // 🔹 FETCH VIDEOS (SHORTS)
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const res = await axios.get(
+          "https://foodieapp-ve9r.onrender.com/api/food",
+          { withCredentials: true }
+        );
+
+        console.log("VIDEOS API:", res.data);
+
+        setVideos(res.data?.Video || []);
+      } catch (err) {
+        console.log("VIDEO ERROR:", err.message);
+      }
+    };
+
+    fetchVideos();
+  }, []);
+
+  // 🔹 FETCH DISHES / RESTAURANTS
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          "https://foodieapp-ve9r.onrender.com/api/food-partner/alldishwithrestaurant",
+          { withCredentials: true }
+        );
+
+        console.log("DISH API:", res.data);
+
+        setData(res.data?.dish || []);
+      } catch (err) {
+        console.log("DISH ERROR:", err.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // 🔹 VIDEO AUTO PLAY OBSERVER (SAFE)
+  useEffect(() => {
+    if (!videos || videos.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const vid = entry.target;
+
+          if (!(vid instanceof HTMLVideoElement)) return;
+
+          if (entry.isIntersecting) {
+            vid.play().catch(() => {});
+          } else {
+            vid.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    videoRefs.current.forEach((vid) => {
+      if (vid) observer.observe(vid);
+    });
+
+    return () => observer.disconnect();
+  }, [videos]);
+
+  const setVideoRef = (id) => (el) => {
+    if (!el) return;
+    videoRefs.current.set(id, el);
+  };
+
+  return (
+    <div className="min-h-screen w-full bg-gray-100 flex flex-col items-center p-3">
+
+      {/* 🔹 DISHES SECTION */}
+      <div className="w-full max-w-3xl">
+        <h1 className="text-xl font-bold mb-2">Restaurants & Dishes</h1>
+
+        {data?.length > 0 ? (
+          data.map((item) => (
+            <div
+              key={item._id}
+              className="bg-white p-3 mb-3 rounded shadow"
+            >
+              <h2 className="font-semibold">{item.name}</h2>
+            </div>
+          ))
+        ) : (
+          <p>No dishes found</p>
+        )}
+      </div>
+
+      {/* 🔹 SHORTS SECTION */}
+      <div className="w-full max-w-3xl mt-6">
+        <h1 className="text-xl font-bold mb-2">Shorts</h1>
+
+        {videos?.length > 0 ? (
+          videos.map((video) => (
+            <div key={video._id} className="mb-4 bg-black rounded overflow-hidden">
+              <video
+                ref={setVideoRef(video._id)}
+                src={video.url}
+                className="w-full h-[300px] object-cover"
+                muted
+                controls
+              />
+            </div>
+          ))
+        ) : (
+          <p>No shorts available</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Home;
