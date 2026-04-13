@@ -233,6 +233,7 @@ const FoodPartnerpage = () => {
   };
 
   return (
+    hellllllllllllllllllllllllllllllllllllo
     <div className="h-screen w-screen flex items-center justify-center">
       <div className="profile-container fixed">
         {data && (
