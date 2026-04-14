@@ -234,7 +234,7 @@ const FoodPartnerpage = () => {
 
   return (
   
-    <div className="h-screen w-screen flex items-center justify-center">
+    /*<div className="h-screen w-screen flex items-center justify-center">
       <div className="profile-container fixed">
         Hello kya ho rha hai
         {data && (
@@ -258,7 +258,7 @@ const FoodPartnerpage = () => {
 
           <i className="text-2xl mt-10 font-bold ">Orders</i>
 
-          {/* 🔹 Orders */}
+      
 
             {order &&
   order.map((orderItem) => (
@@ -266,20 +266,20 @@ const FoodPartnerpage = () => {
       key={orderItem?._id}
       className="h-auto w-full border-2 border-black m-2 p-2 rounded-lg"
     >
-      {/* Customer Info */}
+     
 
       <h1 className="font-semibold">{orderItem?.customerName.fullName}</h1>
       <h3>Order ID: {orderItem?._id}</h3>
       <p>Total: {orderItem?.total.toFixed(2)}</p>
       <p>Address: {orderItem?.address || "No address provided"}</p>
       <h1 className="font-semibold">PhoneNumber:{orderItem?.customerName?.phonenumber}</h1>
-      {/* Status + Buttons */}
+      
       <div className="flex items-center gap-2 mt-2">
         <p className="font-semibold text-blue-600">
           Status: {orderItem?.status.toUpperCase()}/
         </p>
 
-        {/* Buttons only if order not delivered */}
+       
         {orderItem?.status !== "delivered" && (
           <>
             <button
@@ -300,7 +300,7 @@ const FoodPartnerpage = () => {
         )}
       </div>
 
-      {/* Items */}
+     
       <div className="mt-2">
         {orderItem.items.map((item) => (
           <div
@@ -326,7 +326,11 @@ const FoodPartnerpage = () => {
       </div>
    
   );
-};
+};*/
+<div>Hello
+<h1>{data?.name}</h1></div>
+)
+}
 
 export default FoodPartnerpage;
 
