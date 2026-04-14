@@ -24,7 +24,7 @@ const navigate=useNavigate()
       phone
     }
    console.log(formdata)*/
-    const response=await axios.post("https://foodieapp-ve9r.onrender.com/api/auth/user/register",{
+    const response=await axios.post("https://foodieappp.onrender.comapi/auth/user/register",{
       fullName:first+""+second,
       email,
       password,

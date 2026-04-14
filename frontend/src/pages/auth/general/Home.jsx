@@ -160,7 +160,7 @@ const Home = () => {
       const containerRef = useRef(null);
     
       useEffect(() => {
-        axios.get('https://foodieapp-ve9r.onrender.com/api/food',{withCredentials:true})
+        axios.get('https://foodieappp.onrender.com/api/food',{withCredentials:true})
           .then(response => {
             setVideos(response.data.Video);
           })
@@ -207,7 +207,7 @@ const Home = () => {
   useEffect(() => {
   const finaallrestaurant=async()=>{
     try{
-      const response=await axios.get("https://foodieapp-ve9r.onrender.com/api/food-partner/alldishwithrestaurant",
+      const response=await axios.get("https://foodieappp.onrender.com/api/food-partner/alldishwithrestaurant",
         {withCredentials:true}
       )
       console.log(response.data.dish)

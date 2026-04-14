@@ -258,7 +258,7 @@ console.log("USER:", user);
   // ---------------- FETCH VIDEOS ----------------
   useEffect(() => {
     axios
-      .get('https://foodieapp-ve9r.onrender.com/api/food', { withCredentials: true })
+      .get('https://foodieappp.onrender.com/api/food', { withCredentials: true })
       .then((response) => {
         setVideos(response.data.Video);
       });
@@ -275,7 +275,7 @@ const like = async (id) => {
     }
 
     const response = await axios.post(
-      `https://foodieapp-ve9r.onrender.com/api/food/Like/${id}`,
+      `https://foodieappp.onrender.com/api/food/Like/${id}`,
       {}, // body agar empty hai to {}
       {
         withCredentials: true,  // ✅ cookies send karne ke liye
@@ -335,7 +335,7 @@ const like = async (id) => {
   const setallcomment = async (id) => {
     try {
       const response = await axios.get(
-        `https://foodieapp-ve9r.onrender.com/api/auth/commentshow/${id}`,
+        `https://foodieappp.onrender.com/api/auth/commentshow/${id}`,
         { withCredentials: true }
       );
       setput(response.data.comment);
@@ -348,7 +348,7 @@ const like = async (id) => {
   const submitted = async (id) => {
     try {
       const response = await axios.post(
-        `https://foodieapp-ve9r.onrender.com/api/auth/commentcreate/${id}`,
+        `https://foodieappp.onrender.com/api/auth/commentcreate/${id}`,
         { text: comment },
         { withCredentials: true }
       );
