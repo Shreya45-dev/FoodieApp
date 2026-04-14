@@ -24,7 +24,7 @@ const navigate=useNavigate()
       phone
     }
    console.log(formdata)*/
-    const response=await axios.post("https://foodieappp.onrender.comapi/auth/user/register",{
+    const response=await axios.post("https://foodieappp.onrender.com/api/auth/user/register",{
       fullName:first+""+second,
       email,
       password,
@@ -101,7 +101,7 @@ const UserRegister = () => {
 
     try {
       // Replace with your BRM backend endpoint
-      const response = await axios.post('http://localhost:3000/api/register', formData);
+      const response = await axios.post('https://foodieappp.onrender.com/api/register', formData);
 
       if (response.status === 200 || response.status === 201) {
         setMessage('Registration successful!');
@@ -182,7 +182,7 @@ const UserRegister = () => {
     e.preventDefault();
     console.log(user);
     try{
-    const response=await fetch(`http://localhost:3000/api/auth/user/register`,{
+    const response=await fetch(`https://foodieappp.onrender.com/api/auth/user/register`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json",
@@ -267,7 +267,7 @@ const UserRegister = () => {
     
     const password = e.target.password.value;
 
-    const response=await axios.post("http://localhost:3000/api/auth/user/register",{
+    const response=await axios.post("https://foodieappp.onrender.com/api/auth/user/register",{
       fullName,
       email,
       password

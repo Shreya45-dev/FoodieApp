@@ -17,7 +17,7 @@
     
   const fetchDish=async()=>{
       try{
-        const response=await axios.get(`http://localhost:3000/api/food-partner/dish/${id}`,
+        const response=await axios.get(`https://foodieappp.onrender.com/api/food-partner/dish/${id}`,
           {withCredentials:true}
         )
         setdata(response.data.dish)
@@ -36,7 +36,7 @@
      
       const fetchorder=async()=>{
         try{
-        const response=await axios.get(`http://localhost:3000/api/food/restaurant-orders/${id}`,
+        const response=await axios.get(`https://foodieappp.onrender.com/api/food/restaurant-orders/${id}`,
         {withCredentials:true}
         )
         setorder(response.data.orders)
@@ -53,14 +53,14 @@
       const updateStatus = async (orderId, status) => {
   try {
     await axios.put(
-      `http://localhost:3000/api/order/${orderId}`,
+      `https://foodieappp.onrender.com/api/order/${orderId}`,
       { status },
       { withCredentials: true }
     );
 
     // 🔥 refresh orders
     const res = await axios.get(
-      `http://localhost:3000/api/food/restaurant-orders/${id}`,
+      `https://foodieappp.onrender.com/api/food/restaurant-orders/${id}`,
       { withCredentials: true }
     );
 

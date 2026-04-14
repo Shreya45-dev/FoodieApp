@@ -97,7 +97,7 @@ const Oye = ({ foodPartnerId }) => {
     const fetchOrders = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/api/restaurant-orders",
+          "https://foodieappp.onrender.com/api/restaurant-orders",
           { withCredentials: true, signal: controller.signal }
         );
         setOrders(res.data.orders || []);
@@ -113,7 +113,7 @@ const Oye = ({ foodPartnerId }) => {
 
   // Socket.IO for live orders
   useEffect(() => {
-    const socket = io("http://localhost:3000");
+    const socket = io("https://foodieappp.onrender.com");
 
     // Join room for this food partner
     socket.emit("joinRestaurant", foodPartnerId);
@@ -163,3 +163,4 @@ const Oye = ({ foodPartnerId }) => {
 };
 
 export default Oye;*/
+

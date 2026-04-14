@@ -27,7 +27,7 @@ const CreateFood = () => {
     formdata.append("foodName",foodName)
     formdata.append('description',description);
     formdata.append('mama',videoSrc)
-   const res= await axios.post("http://localhost:3000/api/food",formdata,{
+   const res= await axios.post("https://foodieappp.onrender.com/api/food",formdata,{
       withCredentials:true,
     })
     console.log(res.data)
@@ -304,7 +304,7 @@ const CreateFood = () => {
     formData.append('description', description);
     formData.append('video', videoFile);
 try{
-   const res= await axios.post("http://localhost:3000/api/food",formData,{
+   const res= await axios.post("https://foodieappp.onrender.com/api/food",formData,{
       withCredentials:true,
     })
     console.log(res.data)
@@ -325,7 +325,7 @@ try{
   formData.append('video', videoFile);
 
   try {
-    const res = await axios.post("http://localhost:3000/api/food", formData, {
+    const res = await axios.post("https://foodieappp.onrender.com/api/food", formData, {
       withCredentials: true,
       headers: {
         'Content-Type': 'multipart/form-data',
@@ -576,3 +576,4 @@ const CreateFood = () => {
 };
 
 export default CreateFood;
+

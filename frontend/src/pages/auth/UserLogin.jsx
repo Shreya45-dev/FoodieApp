@@ -20,7 +20,7 @@ const UserLogin = () => {
     password
     }
     console.log(formdata)                //yha pr bnd krna comment
-     const response=await axios.post("http://localhost:3000/api/auth/user/login",{
+     const response=await axios.post("https://foodieappp.onrender.com/api/auth/user/login",{
       email,
       password 
     },{
@@ -165,6 +165,7 @@ const UserLogin = () => {
 }
 
 export default UserLogin
+
 
 
 

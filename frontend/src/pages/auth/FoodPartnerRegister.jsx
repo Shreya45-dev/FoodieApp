@@ -84,3 +84,4 @@ const navigate=useNavigate()
 }
 
 export default FoodPartnerRegister
+

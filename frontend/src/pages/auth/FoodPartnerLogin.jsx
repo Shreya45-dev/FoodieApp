@@ -14,7 +14,7 @@ const FoodPartnerLogin = () => {
     }
     console.log(formdata)   yhaa pr comment bnd krna dena ok
     try{
-     const response=await axios.post("http://localhost:3000/api/auth/food-partner/login",{
+     const response=await axios.post("https://foodieappp.onrender.com/api/auth/food-partner/login",{
       email,
       password
     },{

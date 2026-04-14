@@ -25,7 +25,7 @@ const Createfoodwthrestaurant = () => {
   formData.append("cost", cost)
         e.preventDefault()
          try{
-            const response=await axios.post("http://localhost:3000/api/food-partner/createrestaurantdish",
+            const response=await axios.post("https://foodieappp.onrender.com/api/food-partner/createrestaurantdish",
               formData,
              
               {

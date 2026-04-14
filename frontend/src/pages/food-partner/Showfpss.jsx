@@ -3,7 +3,7 @@ import axios from "axios";
 import { io } from "socket.io-client";
 
 // Connect to backend socket
-const socket = io("http://localhost:3000", { withCredentials: true });
+const socket = io("https://foodieappp.onrender.com", { withCredentials: true });
 
 const Showfpss = ({ foodPartnerId }) => {
   const [orders, setOrders] = useState([]);
@@ -13,7 +13,7 @@ const Showfpss = ({ foodPartnerId }) => {
     const fetchOrders = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/food/restaurant-orders/${foodPartnerId}`,
+          `https://foodieappp.onrender.com/api/food/restaurant-orders/${foodPartnerId}`,
           { withCredentials: true }
         );
         setOrders(res.data.orders || []);

@@ -28,7 +28,7 @@ const Home = () => {
     )
   })
   useEffect(()=>{
-    axios.get("http://localhost:3000/api/food")
+    axios.get("https://foodieappp.onrender.com/api/food")
     .then(response=>{
       setVideos(Response.data.foodItems)
     })
@@ -72,7 +72,7 @@ const Shorts = () => {
   const[comment,setcomment]=useState('')
    const[put,setput]=useState([])
   useEffect(() => {
-    axios.get('http://localhost:3000/api/food',{withCredentials:true})
+    axios.get('https://foodieappp.onrender.com/api/food',{withCredentials:true})
       .then(response => {
         setVideos(response.data.foodItems);
       })
@@ -119,7 +119,7 @@ const Shorts = () => {
 
     const setallcomment=async(id)=>{
       try{
-        const response=await axios.get(`http://localhost:3000/api/auth/commentshow/${id}`,{
+        const response=await axios.get(`https://foodieappp.onrender.com/api/auth/commentshow/${id}`,{
           withCredentials:true
         })
         console.log(response.data.comment)
@@ -144,7 +144,7 @@ const Shorts = () => {
 
   const submitted=async(id)=>{
     try{
-  const response=await axios.post(`http://localhost:3000/api/auth/commentcreate/${id}`,
+  const response=await axios.post(`https://foodieappp.onrender.com/api/auth/commentcreate/${id}`,
    { text:comment},{withCredentials:true })
     console.log(response.data.comment)
     console.log(response.data.message)
