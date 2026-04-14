@@ -234,7 +234,7 @@ const FoodPartnerpage = () => {
 
   return (
   
-    /*<div className="h-screen w-screen flex items-center justify-center">
+    <div className="h-screen w-screen flex items-center justify-center">
       <div className="profile-container fixed">
         Hello kya ho rha hai
         {data && (
@@ -326,11 +326,9 @@ const FoodPartnerpage = () => {
       </div>
    
   );
-};*/
-<div>Hello
-<h1>{data?.name}</h1></div>
-)
-}
+};
+
+
 
 export default FoodPartnerpage;
 
