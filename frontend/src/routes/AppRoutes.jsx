@@ -34,6 +34,11 @@ const AppRoutes=()=>{
                 <Route path="/restaurantcreatewithfood" element={<Createfoodwthrestaurant/>}/>
                 <Route path="/food-partner/restaurantdish/:id" element={<Dishprofile/>}/>
                 <Route path="/dish/:name" element={<Dishpagesame/>}/>
+
+                
+             
+                
+                
             </Routes>
         </Router>
         

@@ -236,6 +236,7 @@ const FoodPartnerpage = () => {
   
     <div className="h-screen w-screen flex items-center justify-center">
       <div className="profile-container fixed">
+        Hello kya ho rha hai
         {data && (
           <div className="profile-info">
             <img src="" alt={data.name} className="profile-img" />
