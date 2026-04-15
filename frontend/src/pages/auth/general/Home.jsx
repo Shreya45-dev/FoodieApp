@@ -282,7 +282,7 @@ const Home = () => {
       
       <div className="flex flex-wrap items-center justify-center z-4">
   {videos.slice(1,7).map(item => (
-    <div key={item._id} className="md:h-72 h-60 rounded-xl md:w-60  w:40">
+    <div key={item._id} className="md:h-72 h-60 rounded-xl md:w-60  w:36">
       <div className="h-52 md:h-60 w-32 md:w-52">
     
         
