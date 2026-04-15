@@ -44,7 +44,7 @@ const navigate=useNavigate()
     
     <div className='flex justify-center items-center bg-gradient-to-br from-blue-300 via-blue-600 to-yellow-400 h-screen w-screen'> 
     <div className=' h-[450px] w-[400px] md:w-[440px] border-2 rounded-xl bg-blue-200 border-zinc-500 flex items-center justify-center mt-20'>
-      <div className="h-[420px] md:w-[420px] w-[380px] ">
+      <div className="h-[440px] md:w-[420px] w-[380px] ">
       <i className='text-4xl font-bold mt-5 mb-5 ml-3 '>Sign Up</i>  
       <h1 className='mb-3 ml-3'>Please fill in this form to create account</h1>
     <form onSubmit={submithandler}> 
@@ -62,7 +62,7 @@ const navigate=useNavigate()
       <h1 className='ml-3 mt-5 mb-5'>By creating an account you agree to our <span className='text-blue-500'>Terms & Privacy</span></h1>
        <h1>If Already Registered ?<Link className="text-green-900 font-semibold" to="/user/login" >Login</Link></h1>
     <h1>If registered as food-partner? <Link to="/">Go to Home Page</Link></h1>
-     <button type="submit" className='bg-blue-500 h-6 md:h-10 w-full'>Sign Up</button>
+     <button type="submit" className='bg-blue-500 h-10 w-full'>Sign Up</button>
       
     
       
