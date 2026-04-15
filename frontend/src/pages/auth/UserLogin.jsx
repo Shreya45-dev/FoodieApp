@@ -104,7 +104,7 @@ const UserLogin = () => {
     return (
     <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
             
-      <div className="bg-white/10 h-60  backdrop-blur-lg p-10 rounded-3xl shadow-2xl w-[400px] border border-white/20">
+      <div className="bg-white/10 h-60 sm:h-40  backdrop-blur-lg p-10 rounded-3xl shadow-2xl w-[400px] sm:w-[350px] border border-white/20">
                 
         <h1 className="text-3xl font-bold text-white text-center mb-6">
           Welcome Back 👋
