@@ -79,7 +79,13 @@ body, html {
   .reel {
     width: 100%;
   }
+  #hi{
+    margin-top: 560px;
+    margin-left: 10px;
+  }
+
 }
+/*tablet ke liye bhi*/
 /*
 body, html {
   margin: 0;
