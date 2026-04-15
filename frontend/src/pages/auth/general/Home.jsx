@@ -283,7 +283,7 @@ const Home = () => {
       <div className="flex flex-wrap items-center justify-center z-4">
   {videos.slice(1,7).map(item => (
     <div key={item._id} className="md:h-72 h-60 rounded-xl md:w-60  w:40">
-      <div className="h-52 md:h-60 w-36 md:w-52">
+      <div className="h-52 md:h-60 w-32 md:w-52">
     
         
     
@@ -295,7 +295,7 @@ const Home = () => {
         playsInline
         loop
         preload="metadata"
-        className="reel-video rounded-2xl md:h-60  md:w-52 h-52 w-36 "
+        className="reel-video rounded-2xl md:h-60  md:w-52 h-52 w-32 "
       /> </Link></div>      <p className="font-bold  relative z-10 ">{item.foodPartner?.name}</p>
     </div>
 
