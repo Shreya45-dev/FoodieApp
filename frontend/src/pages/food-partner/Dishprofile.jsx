@@ -98,7 +98,7 @@ const dispatch=useDispatch()
    {cart?
 
 
-            <div className={`h-[100vh] w-[500px] shadow-2xl overflow-auto bg-white right-0 top-0 fixed transition-all duration-500 ${cart?"translate-x-0":"translate-x-full"}`}>
+            <div className={`h-[100vh] md:w-[500px] w-[100vw] shadow-2xl overflow-auto bg-white right-0 top-0 fixed transition-all duration-500 ${cart?"translate-x-0":"translate-x-full"}`}>
               <div className='flex'>
       
       <h1>Order Items</h1>
