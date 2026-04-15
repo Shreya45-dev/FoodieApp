@@ -45,8 +45,8 @@ const navigate=useNavigate()
     <>
     
     <div className='flex h-screen w-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500  items-center justify-center'> 
-    <div className=' h-[600px] w-[340px] md:w-[440px] border-2 rounded-xl bg-blue-200 border-zinc-500 flex items-center justify-center mt-20'>
-      <div className="h-[580px] md:w-[420px] w-[320px] ">
+    <div className=' h-[640px] w-[340px] md:w-[440px] border-2 rounded-xl bg-blue-200 border-zinc-500 flex items-center justify-center mt-20'>
+      <div className="h-[620px] md:w-[420px] w-[320px] ">
       <i className='text-4xl font-bold mt-5 mb-5 ml-3 '>Sign Up</i>  
       <h1 className='mb-3 ml-3'>Please fill in this form to create account</h1>
     <form onSubmit={submithandler}> 
