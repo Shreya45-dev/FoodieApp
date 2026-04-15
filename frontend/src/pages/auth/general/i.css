@@ -39,36 +39,10 @@ body, html {
   object-fit: cover;
 }
 
-/* Caption */
-#hi {
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
 
-  padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 14px;
-  border-radius: 6px;
 
-  max-width: 90%;
-  backdrop-filter: blur(2px);
-}
 
-/* ❌ fix wrong selector (.reel f is invalid) */
-.reel .f {
-  position: absolute;
-  bottom: 60px;
-  left: 10px;
-  padding: 8px 12px;
-  color: #fff;
-}
-
-/* ========================= */
-/* 📱 RESPONSIVE PART */
-/* ========================= */
-
-/* Tablet */
+/* Tablet 
 @media (max-width: 1024px) {
   .reels-container {
     width: 100%;
@@ -80,7 +54,7 @@ body, html {
   .reel {
     width: 100%;
   }
-}
+}*/
 
 /* Mobile */
 @media (max-width: 600px) {
