@@ -43,8 +43,8 @@ const navigate=useNavigate()
     <>
     
     <div className='flex justify-center items-center bg-gradient-to-br from-blue-300 via-blue-600 to-yellow-400 h-screen w-screen'> 
-    <div className=' h-[350px] md:h-[400px] w-[380px] md:w-[440px] border-2 rounded-xl bg-blue-200 border-zinc-500 flex items-center justify-center mt-20'>
-      <div className="h-[330px] md:h-[380px] md:w-[420px] w-[360px]">
+    <div className=' h-[400px] w-[400px] md:w-[440px] border-2 rounded-xl bg-blue-200 border-zinc-500 flex items-center justify-center mt-20'>
+      <div className="h-[380px] md:w-[420px] w-[380px] ">
       <i className='text-4xl font-bold mt-5 mb-5 ml-3 '>Sign Up</i>  
       <h1 className='mb-3 ml-3'>Please fill in this form to create account</h1>
     <form onSubmit={submithandler}> 
