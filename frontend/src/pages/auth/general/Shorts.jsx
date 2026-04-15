@@ -424,6 +424,7 @@ const like = async (id) => {
     like(item._id);
   }}
 >
+  
   {item.Likes
     .filter(id => id)             // remove null or undefined
     .map(id => id.toString())
