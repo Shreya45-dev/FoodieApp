@@ -110,7 +110,7 @@ const Createfoodwthrestaurant = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
             
-            <div className="bg-white/80 backdrop-blur-lg h-[340px] rounded-2xl shadow-2xl w-[400px] p-8">
+            <div className="bg-white/80 backdrop-blur-lg h-[340px] rounded-2xl shadow-2xl md:w-[400px] w-[300px] p-8">
                 
                 <h1 className="text-3xl font-bold text-center text-purple-700 mb-6">
                     🍽️ Create Dish

@@ -280,7 +280,7 @@ const Home = () => {
       })}</div>
       <i><Link className="ml-10 left-11 font-bold text-2xl text-red-500 relative" to="/shorts">Shorts</Link></i>
       
-      <div className="flex flex-wrap items-center justify-around w-full z-4">
+      <div className="flex flex-wrap items-center justify-between w-full z-4">
   {videos.slice(1,7).map(item => (
     <div key={item._id} className="md:h-72 h-60 rounded-xl md:w-60  w:40">
       <div className="h-52 md:h-60 w-40 md:w-52">

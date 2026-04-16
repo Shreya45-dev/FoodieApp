@@ -91,7 +91,7 @@ const Prrofile = () => {
 
       <div className="video-section">
         <h3 className="video-title">Videos</h3>
-        <div className=" flex flex-wrap items-center bg-red-500justify-around gap-2">
+        <div className=" flex flex-wrap items-center justify-around gap-2">
           {videos?.map((v, index) => (
             <div key={v.id || index} className="video-wrapper  ">
                
