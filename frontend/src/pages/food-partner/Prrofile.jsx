@@ -73,7 +73,7 @@ const Prrofile = () => {
   return (
    <div className="profile-container">
       {profile && (
-        <div className="profile-info">
+        <div className="profile-info    ">
           <img
             src={profile.image || "https://via.placeholder.com/150"}
             alt={profile.name}
@@ -91,9 +91,9 @@ const Prrofile = () => {
 
       <div className="video-section">
         <h3 className="video-title">Videos</h3>
-        <div className="video-grid ">
+        <div className="video-grid  flex flex-wrap gap-2">
           {videos?.map((v, index) => (
-            <div key={v.id || index} className="video-wrapper">
+            <div key={v.id || index} className="video-wrapper  ">
                
       <>
         <h1>{v.name}</h1>
