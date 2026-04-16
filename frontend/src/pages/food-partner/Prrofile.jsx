@@ -43,12 +43,13 @@ export default Prrofile*/
 
 import React, { useEffect, useState } from 'react';
 import "./pro.css";
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import Showfpss from './Showfpss';
 import axios from 'axios';
 
 
 const Prrofile = () => {
+  const navigate=useNavigate();
   const { id } = useParams();
   const [profile, setProfile] = useState(null);
   const [videos, setVideos] = useState([]);
@@ -69,12 +70,13 @@ const Prrofile = () => {
   }, [id]);
 
   if (loading) return <div className="loading">Loading...</div>;
-   const videodel=(id)=>{
-    axios.get(`https://foodieappp.onrender.com/api/food-partner/delvideo/${id}`,{withCredentials:true})
+   const videodel=(ide)=>{
+    axios.get(`https://foodieappp.onrender.com/api/food/delvideo/${ide}`,{withCredentials:true})
     .then(response=>{
       alert("video deleted successfully")
       console.log(response.data.message)
     })
+    navigate(`/foodpartner/${id}`)
     .catch(err=>{
       console.log(err)
     })
