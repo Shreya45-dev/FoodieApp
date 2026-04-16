@@ -120,6 +120,10 @@
   .video-section {
     margin-left: 0;
   }
+  .video-wrapper{
+    width: 40vw;
+    height: 50vh;
+  }
 }
 
 

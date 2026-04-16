@@ -236,10 +236,10 @@ const FoodPartnerpage = () => {
   
     <div className="h-screen w-screen flex items-center justify-center">
       <div className="profile-container fixed">
-        Hello kya ho rha hai
+     
         {data && (
           <div className="profile-info">
-            <img src="" alt={data.name} className="profile-img" />
+            <img src="" alt="" className="profile-img" />
             <div>
               <Link to={`/food-partner/${data._id}`}>See Uploaded Videos--></Link>
               <h2 className="profile-name">{data.name}</h2>
