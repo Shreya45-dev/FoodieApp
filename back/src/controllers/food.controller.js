@@ -248,7 +248,7 @@ const updateOrderStatus = async (req, res) => {
   
 
 
-module.exports={createFood,getFoodItems,createrestaurantdish,allrestaurantwithdish,getintopartnerdish,getintopartnerdish,orderfood,getorderfood,orderfoodbyuser,samedish,like,getRestaurantOrders,updateOrderStatus}
+module.exports={createFood,getFoodItems,createrestaurantdish,allrestaurantwithdish,getintopartnerdish,getintopartnerdish,orderfood,getorderfood,orderfoodbyuser,samedish,like,getRestaurantOrders,updateOrderStatus,delvideo}
 
 
 
