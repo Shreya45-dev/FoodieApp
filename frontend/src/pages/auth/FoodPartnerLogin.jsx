@@ -54,8 +54,12 @@ export default FoodPartnerLogin
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from "react-router-dom"
+import { useDispatch } from 'react-redux'
+import { setPartnerUser } from '../../redux/foodpartner'
 
 const FoodPartnerLogin = () => {
+  setPartnerUser
+    const dispatch = useDispatch()
   const navigate = useNavigate()
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
@@ -68,6 +72,10 @@ const FoodPartnerLogin = () => {
         { email, password },
         { withCredentials: true }
       )
+       dispatch(setPartnerUser({
+        ...response.data.foodpartner,
+        
+      }));
       navigate(`/food-partner/page/${response.data.user._id}`)
     } catch (err) {
       console.log(err.response?.data)

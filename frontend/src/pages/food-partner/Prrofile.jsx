@@ -46,7 +46,7 @@ import "./pro.css";
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import Showfpss from './Showfpss';
 import axios from 'axios';
-
+import { MdDeleteForever } from "react-icons/md";
 
 const Prrofile = () => {
   
@@ -95,7 +95,7 @@ const Prrofile = () => {
           <div>
             <h2 className="profile-name">{profile.name}</h2>
           <Link to="/restaurantcreatewithfood">Upload Dishes </Link>
-          <Link to="/restaurantcreatewithfood">Upload Dishes </Link>
+          
           
           </div>
         </div>
@@ -108,8 +108,8 @@ const Prrofile = () => {
             <div key={v.id || index} className="video-wrapper  ">
                
       <>
-      <div className="flex">
-        <h1>{v.name}</h1> {id? <h1 onClick={() => videodel(v._id)}>del</h1>: ""} </div>
+      <div className="flex item-center justify-between">
+        <h1>{v.name}</h1> {id? <MdDeleteForever  onClick={() => videodel(v._id)} />: ""} </div>
         <video id="hello" src={v.video} muted controls />
       </>
     

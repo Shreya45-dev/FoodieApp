@@ -90,6 +90,26 @@ const getintopartnerdish=async(req,res)=>{
     dish
   })
 }
+const deldish=async(req,res)=>{
+  const id=req.params.id;
+  const dish=await restaurantmodel.findByIdAndDelete(id);
+  const foodPartner=await foodPartnerModel.findById(dish.foodPartner)
+  foodPartner.alldishes.pull(dish._id)
+  await foodPartner.save()
+  res.status(200).json({
+    message:"dish deleted successfully",
+    dish
+  })
+  
+}
+const representalldish=async(req,res)=>{
+  
+  const dish=await restaurantmodel.find(req.foodpartner._id).populate(foodPartner).sort({createdAt:-1})
+res.status(200).json({
+  message:"dish fetched successfully",
+  dish
+
+})}
 
 
 const getorderfood=async(req,res)=>{
@@ -248,7 +268,7 @@ const updateOrderStatus = async (req, res) => {
   
 
 
-module.exports={createFood,getFoodItems,createrestaurantdish,allrestaurantwithdish,getintopartnerdish,getintopartnerdish,orderfood,getorderfood,orderfoodbyuser,samedish,like,getRestaurantOrders,updateOrderStatus,delvideo}
+module.exports={createFood,getFoodItems,createrestaurantdish,allrestaurantwithdish,getintopartnerdish,getintopartnerdish,orderfood,getorderfood,orderfoodbyuser,samedish,like,getRestaurantOrders,updateOrderStatus,delvideo,deldish}
 
 
 

@@ -23,6 +23,7 @@ const express = require('express'); // npm i express
 const cookieParser = require('cookie-parser'); // npm i cookie-parser
 const cors = require('cors');
 
+
 // Routes
 const authRoutes = require('./routes/auth.routes');
 const foodRoutes = require('./routes/food.routes');

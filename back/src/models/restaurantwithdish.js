@@ -22,6 +22,8 @@ const foodrestaurantSchema=new mongoose.Schema({
            //ye maine kiya hai
         ref:"foodpartner"
     }
-})
+}
+
+)
 const foodrestaurantModel=mongoose.model("restaurantwithdish",foodrestaurantSchema)
 module.exports=foodrestaurantModel
