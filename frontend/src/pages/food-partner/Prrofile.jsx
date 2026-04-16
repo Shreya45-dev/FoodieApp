@@ -50,7 +50,7 @@ import axios from 'axios';
 
 const Prrofile = () => {
   
-  const navigate=useNavigate();
+  
   const { id } = useParams();
   const [profile, setProfile] = useState(null);
   const [videos, setVideos] = useState([]);
@@ -76,8 +76,8 @@ const Prrofile = () => {
     .then(response=>{
       alert("video deleted successfully")
       console.log(response.data.message)
-    })
-    navigate(`/foodpartner/${id}`)
+    
+   setVideos(prev => prev.filter(v => v._id !== ide));})
     .catch(err=>{
       console.log(err)
     })
@@ -109,7 +109,7 @@ const Prrofile = () => {
                
       <>
       <div className="flex">
-        <h1>{v.name}</h1> {id? <h1 onClick={videodel(v._id,)}>del</h1>: ""} </div>
+        <h1>{v.name}</h1> {id? <h1 onClick={() => videodel(v._id)}>del</h1>: ""} </div>
         <video id="hello" src={v.video} muted controls />
       </>
     
