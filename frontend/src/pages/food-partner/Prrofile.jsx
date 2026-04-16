@@ -43,12 +43,13 @@ export default Prrofile*/
 
 import React, { useEffect, useState } from 'react';
 import "./pro.css";
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import Showfpss from './Showfpss';
 import axios from 'axios';
 
 
 const Prrofile = () => {
+  
   const navigate=useNavigate();
   const { id } = useParams();
   const [profile, setProfile] = useState(null);
