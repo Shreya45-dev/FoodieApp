@@ -265,7 +265,7 @@ const Home = () => {
 </div>
              <div className="flex justify-center items-center">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7TH5E9B6zrUEcGiI6s0YZllGGXL9Ye9Qyg&s"/>
-      <h1 className="text-[60px] text-purple-800 font-bold">Delicious Pizza</h1></div>
+      <h1 className="md:text-[60px] text[30px] text-purple-800 font-bold">Delicious Pizza</h1></div>
        <div className="flex justify-center overflow-y-auto  overflow-x-hidden flex-wrap">
             
       {dishes.map((dish,index)=>{
