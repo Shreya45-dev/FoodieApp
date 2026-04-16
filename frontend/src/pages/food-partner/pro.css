@@ -104,6 +104,28 @@
 }
 
 
+@media (max-width: 600px) {
+  .profile-container {
+    width: 100%;
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .profile-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .video-section {
+    margin-left: 0;
+  }
+}
+
+
+
+
+
 
 
 /* Loading State */
