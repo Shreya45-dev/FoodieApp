@@ -242,6 +242,7 @@ const FoodPartnerpage = () => {
             <img src="" alt="" className="profile-img" />
             <div>
               <Link to={`/food-partner/${data._id}`}>See Uploaded Videos--></Link>
+               <Link to={'/alldish'}>See Uploaded Dishes--></Link>
               <h2 className="profile-name">{data.name}</h2>
               <Link className="block text-red-800" to="/restaurantcreatewithfood">
                 Upload Dishes

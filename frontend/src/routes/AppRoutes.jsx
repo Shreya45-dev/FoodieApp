@@ -35,7 +35,7 @@ const AppRoutes=()=>{
                 <Route path="/restaurantcreatewithfood" element={<Createfoodwthrestaurant/>}/>
                 <Route path="/food-partner/restaurantdish/:id" element={<Dishprofile/>}/>
                 <Route path="/dish/:name" element={<Dishpagesame/>}/>
-                <Route path="alldish" element={<Alldish/>}/>
+                <Route path="/alldish" element={<Alldish/>}/>
 
                 
              
