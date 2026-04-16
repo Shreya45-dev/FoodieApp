@@ -23,6 +23,8 @@ async function createFood(req,res){
         message:"food created successfully",
         food:foodItem
      })
+  
+    
 
 
            ///cloud storage provider imagekit
@@ -37,6 +39,15 @@ async function getFoodItems(req,res){
   
   
  })
+}
+const delvideo=async(req,res)=>{
+  const id=req.params.id;
+  const video=await foodModel.findByIdAndDelete(id);
+  res.status(200).json({
+    message:"video deleted successfully",
+    video
+  })
+  
 }
 const createrestaurantdish=async(req,res)=>{
   const{name,description,cost}=req.body;

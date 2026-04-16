@@ -69,7 +69,16 @@ const Prrofile = () => {
   }, [id]);
 
   if (loading) return <div className="loading">Loading...</div>;
-
+   const videodel=(id)=>{
+    axios.get(`https://foodieappp.onrender.com/api/food-partner/delvideo/${id}`,{withCredentials:true})
+    .then(response=>{
+      alert("video deleted successfully")
+      console.log(response.data.message)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+   }
   return (
    <div className="profile-container">
       {profile && (
@@ -96,7 +105,8 @@ const Prrofile = () => {
             <div key={v.id || index} className="video-wrapper  ">
                
       <>
-        <h1>{v.name}</h1>
+      <div className="flex">
+        <h1>{v.name}</h1> {id? <h1 onClick={videodel(v._id,)}>del</h1>: ""} </div>
         <video id="hello" src={v.video} muted controls />
       </>
     

@@ -24,7 +24,7 @@ router.get(
   foodController.getRestaurantOrders
 )
 
-
+router.get("/delvideo/:id",authMiddleware.authFoodPartnerMiddleware,foodController.delvideo)
 router.put("/api/order/:id",authMiddleware.authFoodPartnerMiddleware,foodController.updateOrderStatus)
 //for frontend
 // react works with npm run dev   
