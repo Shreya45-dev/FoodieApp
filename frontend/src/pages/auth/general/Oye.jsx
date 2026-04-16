@@ -77,7 +77,7 @@ const Oyee = () => {
   
       </div>
         
-      hello
+      
     </div>
   )
 }

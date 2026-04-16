@@ -101,6 +101,7 @@ const Createfoodwthrestaurant = () => {
                     headers: { "Content-Type": "multipart/form-data" }
                 }
             )
+            alert('dish created successfully')
             console.log(response.data.message)
         } catch (err) {
             console.log(err)

@@ -488,6 +488,7 @@ const CreateFood = () => {
         withCredentials: true,
       });
       console.log(res.data);
+      alert('Video uploaded successfully')
       navigate('/');
     } catch (error) {
       console.error('Upload failed:', error);
@@ -499,7 +500,7 @@ const CreateFood = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4">
-      <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl w-full max-w-md p-6">
+      <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl  md:w-full max-w-md w-[300px] p-6">
         <h2 className="text-2xl font-bold text-purple-700 text-center mb-6">🎬 Upload Food Video</h2>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
