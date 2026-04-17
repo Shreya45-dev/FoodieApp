@@ -73,7 +73,7 @@ const FoodPartnerLogin = () => {
         { withCredentials: true }
       )
        dispatch(setPartnerUser({
-        ...response.data.foodpartner,
+        ...response.data.user
         
       }));
       navigate(`/food-partner/page/${response.data.user._id}`)
