@@ -7,9 +7,10 @@ import { FaPager, FaPaintRoller } from 'react-icons/fa'
 
 const Alldish = () => {
 
-    const fp=useSelector((state)=>state.fp)
-    const id=fp._id
-
+   const fp = useSelector((state) => state.fpartner.fp);
+const id = fp?._id;
+  
+   
    
     const [data, setdata] = useState([])
     useEffect(() => {
