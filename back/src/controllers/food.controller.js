@@ -104,7 +104,7 @@ const deldish=async(req,res)=>{
 }
 const representalldish=async(req,res)=>{
   
-  const dish=await restaurantmodel.find(req.foodpartner._id).populate(foodPartner).sort({createdAt:-1})
+  const dish=await restaurantmodel.findById(req.foodpartner._id).populate('foodPartner').sort({createdAt:-1})
 res.status(200).json({
   message:"dish fetched successfully",
   dish
