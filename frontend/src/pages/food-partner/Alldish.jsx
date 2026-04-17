@@ -10,29 +10,42 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 const Alldish = () => {
-    const fp = useSelector((state) => state.fp);
-  //  const [data, setdata] = useState(second)
-//useEffect(() => {
-//  const find=async()=>{
-  //   await axios.get("https://foodieappp.onrender.com/api/food-partner/${id}")
-    
-///  }
-
+    const fp=useSelector((state)=>state.fpartner.fp)
   
-//}, [])import { useSelector } from "react-redux";
+    const id=fp._id
+  
+    const [data, setdata] = useState(second)
+    useEffect(() => {
+ const find=async()=>{
+  try{
+   const res=await axios.get("https://foodieappp.onrender.com/api/food/alldish")
+      setdata(res.data.dish)
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+ find()
+  
+}, [])
 
 
 
   return (
     <div>
-        {fp?.alldishes?.map((d)=>(
-            <div key={d._id}>
-                <h3>{d.name}</h3>
-                <p>{d.description}</p>
-                <p>Price: ${d.price}</p>
-            </div>
-
-        ))}
+     {data.map((item)=>{
+        return(
+          <div>
+            <img className="h-20 w-20" src={item.image} />
+            <h1>{item.name}</h1>
+            <h1>{item.description}</h1>
+            <h1>{item.cost}</h1>
+          </div>
+        
+        )
+      })}
+      
+        
       
     </div>
   )
