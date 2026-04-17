@@ -4,7 +4,13 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 const Alldish = () => {
-    const foodpartner = useSelector((state) => state.user);
+import React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+
+const Alldish = () => {
+    const fp = useSelector((state) => state.fp);
   //  const [data, setdata] = useState(second)
 //useEffect(() => {
 //  const find=async()=>{
@@ -19,7 +25,7 @@ const Alldish = () => {
 
   return (
     <div>
-        {foodpartner?.alldishes?.map((d)=>(
+        {fp?.alldishes?.map((d)=>(
             <div key={d._id}>
                 <h3>{d.name}</h3>
                 <p>{d.description}</p>
@@ -32,4 +38,4 @@ const Alldish = () => {
   )
 }
 
-export default Alldish
+export default Alldish}
