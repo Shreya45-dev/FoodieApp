@@ -10,11 +10,9 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 const Alldish = () => {
-    const fp=useSelector((state)=>state.fpartner.fp)
-  
-    const id=fp._id
-  console.log(id);
-    const [data, setdata] = useState(second)
+
+   
+    const [data, setdata] = useState([])
     useEffect(() => {
  const find=async()=>{
   try{
