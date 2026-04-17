@@ -30,11 +30,11 @@ const Alldish = () => {
 
 
   return (
-    <div className="h-screen w-screen flex flex-wrap items-center justify-center ">
+    <div className="h-screen w-screen flex flex-wrap  justify-center ">
      {data.map((item)=>{
         return(
-          <div className=" h-[8vh] shadow-2xl w-[5vw]" key={item._id}>
-            <img className="h-[5vh] w-[5vw]" src={item.image} />
+          <div className=" h-[20vh] shadow-2xl w-[20vw]" key={item._id}>
+            <img className="h-[15vh] w-[15vw]" src={item.image} />
             <h1>{item.name}</h1>
             <h1>{item.description}</h1>
             <h1>{item.cost}</h1>
@@ -42,7 +42,7 @@ const Alldish = () => {
         
         )
       })}
-      
+    
         
       
     </div>
@@ -50,3 +50,7 @@ const Alldish = () => {
 }
 
 export default Alldish
+ //git add .
+ //git commit -m"res"
+
+//git push -u origin main
