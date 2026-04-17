@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
+import { FaPager, FaPaintRoller } from 'react-icons/fa'
 
 const Alldish = () => {
 
@@ -39,15 +40,11 @@ const Alldish = () => {
           <div className="profile-info">
             <img src="" alt="" className="profile-img" />
             <div>
-              <Link to={`/food-partner/${data._id}`}>See Uploaded Videos--></Link>
+              <Link to={`/food-partner/${id}`}>See Uploaded Videos--></Link>
   
-              <h2 className="profile-name">{data.name}</h2>
-              <Link className="block text-red-800" to="/restaurantcreatewithfood">
-                Upload Dishes
-              </Link>
-              <Link className="text-green-800" to={`/create-food`}>
-                Upload Videos/Reels
-              </Link>
+              <h2 className="profile-name">{fp.name}</h2>
+             
+            
             </div>
           </div>
         )}
