@@ -70,7 +70,7 @@ find()
     {dishes && dishes.map((item,index)=>{
       return(
      
-         <Link to={`/foodpartner/restaurantdish/${item.foodPartner._id}`}><div key={index}  className="h-56  w-full flex items-center justify-around  border-b-2 border-b-grey-200">
+         <Link to={`/food-partner/restaurantdish/${item.foodPartner._id}`}><div key={index}  className="h-56  w-full flex items-center justify-around  border-b-2 border-b-grey-200">
          <div>
           <h1>{item.name}</h1>
           <h1>{item.description}</h1>
