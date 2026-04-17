@@ -24,6 +24,7 @@ const Alldish = () => {
     }
     catch(err){
       console.log(err);
+      console.log("helllllllllllllllllllo")
     }
   }
  find()
