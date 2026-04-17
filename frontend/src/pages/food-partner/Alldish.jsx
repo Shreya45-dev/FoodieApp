@@ -51,7 +51,7 @@ const id = fp?._id;
           </div>
         )}
 
-        <div className="overflow-y-auto flex items-center justify-center flex-wrap h-[450px]">
+        <div className="overflow-y-auto flex flex-col  justify-center  h-[450px]">
          
 
           <i className="text-2xl mt-10 font-bold ">Dishes</i>
