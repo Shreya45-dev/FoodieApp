@@ -33,7 +33,7 @@ const Alldish = () => {
     <div className="h-screen w-screen flex flex-wrap  justify-center ">
      {data.map((item)=>{
         return(
-          <div className=" h-[20vh] shadow-2xl w-[20vw]" key={item._id}>
+          <div className=" h-[25vh] shadow-2xl w-[20vw]" key={item._id}>
             <img className="h-[15vh] w-[15vw]" src={item.image} />
             <h1>{item.name}</h1>
             <h1>{item.description}</h1>
