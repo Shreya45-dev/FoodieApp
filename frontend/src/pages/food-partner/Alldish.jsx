@@ -13,13 +13,14 @@ const Alldish = () => {
     const fp=useSelector((state)=>state.fpartner.fp)
   
     const id=fp._id
-  
+  console.log(id);
     const [data, setdata] = useState(second)
     useEffect(() => {
  const find=async()=>{
   try{
    const res=await axios.get("https://foodieappp.onrender.com/api/food/alldish")
       setdata(res.data.dish)
+      console.log(res.data.dish)
     }
     catch(err){
       console.log(err);
