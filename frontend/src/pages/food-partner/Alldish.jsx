@@ -16,7 +16,9 @@ const Alldish = () => {
     useEffect(() => {
  const find=async()=>{
   try{
-   const res=await axios.get("https://foodieappp.onrender.com/api/food/alldish")
+   const res=await axios.get("https://foodieappp.onrender.com/api/food/alldish",
+     {withCredentials:true}
+   )
       setdata(res.data.dish)
       console.log(res.data.dish)
     }
