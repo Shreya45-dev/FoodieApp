@@ -2,14 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import axios from 'axios'
 
 const Alldish = () => {
-import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
 
-const Alldish = () => {
 
    
     const [data, setdata] = useState([])
@@ -53,4 +49,4 @@ const Alldish = () => {
   )
 }
 
-export default Alldish}
+export default Alldish
