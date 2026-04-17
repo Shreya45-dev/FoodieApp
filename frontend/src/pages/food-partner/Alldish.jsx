@@ -51,7 +51,7 @@ const id = fp?._id;
           </div>
         )}
 
-        <div className="overflow-y-auto flex flex-col  justify-center  h-[450px]">
+        <div className="overflow-y-auto flex flex-col   h-[450px]">
          
 
           <i className="text-2xl mt-10 font-bold ">Dishes</i>
@@ -62,8 +62,8 @@ const id = fp?._id;
        <div className="flex items-center justify-center flex-wrap gap-4 mt-10">
          {data.map((item)=>{
         return(
-          <div className=" h-[25vh] shadow-2xl w-[10vw] flex flex-col  items-center justify-center" key={item._id}>
-            <img className="h-[15vh] w-[10vw]" src={item.image} />
+          <div className=" h-[25vh] shadow-2xl w-[15vw] md:w-[10vw] flex flex-col  items-center justify-center" key={item._id}>
+            <img className="h-[15vh] w-[15vw] md:w-[10vw]" src={item.image} />
             <h1>{item.name}</h1>
             <h1>{item.description}</h1>
             <h1>{item.cost}</h1>
