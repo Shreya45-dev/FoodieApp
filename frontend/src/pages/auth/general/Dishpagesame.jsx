@@ -92,7 +92,7 @@ find()
       
  {items.map(function(e){
       return(<>
-             <div className='h-40 mb-5 mt-5 relative flex items-center w-full  shadow-2xl 'key={e.id}>
+           <Link to={`/foodpartner/restaurantdish/${e.id}`}>  <div className='h-40 mb-5 mt-5 relative flex items-center w-full  shadow-2xl 'key={e.id}>
               <div className='flex items-center justify-around'>
                 <div className="h-32 bg-red-500 rounded-xl w-32 m-3">
                    <img  className='h-32 w-32 rounded-xl 'src={e.dishimg}/></div>
@@ -107,7 +107,7 @@ find()
                   >+</div></div></span></h1>
                    <span className='ml-20 absolute right-4'>
                    <h1 className=' mt-7'>{e.cost}</h1>
-                   <h5 className='mt-10 size-8 text-red-500' onClick={()=>dispatch(RemoveItem(e.id))}>del</h5></span></div></div>
+                   <h5 className='mt-10 size-8 text-red-500' onClick={()=>dispatch(RemoveItem(e.id))}>del</h5></span></div></div></Link>
              </>)
             
       })} 
