@@ -16,6 +16,7 @@ import FoodPartnerpage from '../pages/food-partner/FoodPartnerpage'
 import MainPage from '../pages/auth/MainPage'
 import Alldish from '../pages/food-partner/Alldish'
 import Editdishh from '../pages/food-partner/Editdishh'
+import Searchdish from '../pages/auth/general/Searchdish'
 
 const AppRoutes=()=>{
 
@@ -38,6 +39,7 @@ const AppRoutes=()=>{
                 <Route path="/dish/:name" element={<Dishpagesame/>}/>
                 <Route path="/alldish" element={<Alldish/>}/>
                 <Route path="/edit/dish/:id" element={<Editdishh/>}/>
+                <Route path="/searchdish" element={<Searchdish/>}/>
 
                 
              
