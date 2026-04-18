@@ -153,12 +153,16 @@ import './i.css'
 
 import { FaUser } from "react-icons/fa"
 const Home = () => {
-  
+ 
   const[data,setdata]=useState("")
    const [videos, setVideos] = useState([]);
+   const [search,setsearch]=useState("")
+   const [searchdata,setsearchdata]=useState([])
       const videoRefs = useRef(new Map());
       const containerRef = useRef(null);
-    
+      const query = first.trim().toLowerCase();
+
+
       useEffect(() => {
         axios.get('https://foodieappp.onrender.com/api/food',{withCredentials:true})
           .then(response => {
@@ -203,7 +207,7 @@ const Home = () => {
         } else {
           videoRefs.current.delete(id);
         }
-      };
+      }
   useEffect(() => {
   const finaallrestaurant=async()=>{
     try{
@@ -225,6 +229,24 @@ const Home = () => {
   }
   finaallrestaurant()
   }, [])
+
+// query = first.trim().toLowerCase();
+   
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setsearch(value);
+
+    const q = value.trim().toLowerCase();
+
+     const searching = data.filter((item) =>
+      item.name.toLowerCase().includes(q)
+    );
+
+    setsearchdata(searching);
+  };
+
+
+
     let count=0;
 
     const dishes = [
@@ -250,6 +272,7 @@ const Home = () => {
   ]
 
   return (
+
     <div className="h-screen  w-screen">
      <div className="w-screen flex items-center justify-between h-20 fixed top-0 left-0 z-50 bg-white shadow-md">
   <Link className="relative" to="/oyee">
@@ -267,7 +290,13 @@ const Home = () => {
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7TH5E9B6zrUEcGiI6s0YZllGGXL9Ye9Qyg&s"/>
       <h1 className="md:text-[60px] text-[40px] text-purple-800 font-bold">Delicious Pizza</h1></div>
        <div className="flex justify-center overflow-y-auto  overflow-x-hidden flex-wrap">
-            
+             <input
+        type="text"
+        value={search}
+        onChange={handleSearch}
+        placeholder="Search dishes..."
+        className="w-full p-3 border rounded-lg shadow focus:ring-2 focus:ring-red-400 outline-none"
+      />
       {dishes.map((dish,index)=>{
         return(
     <div className='h-48 w-40 m-5 flex flex-col justify-center items-center  ' key={index}>
@@ -302,6 +331,21 @@ const Home = () => {
   ))}
 </div>
     
+       <div className="flex flex-wrap w-screen  justify-center">
+      {searchdata && searchdata.map((dish,index)=>{
+        return(
+         <Link to={`/food-partner/restaurantdish/${dish.foodPartner._id}`} key={index}>
+          <div className='h-84 w-40   m-10 flex flex-col '>
+          
+        <img className="h-44 rounded-2xl   w-36 overflow-hidden" src={dish.image}/>
+        <h1 className="font-bold relative left-5 "  >{dish.name}</h1>
+        <h1 className="w-36 left-5 relative"   >{dish.description}</h1>
+        <i className="w-36 left-5 text-green-800 relative font-2xl font-semibold">{dish.foodPartner.restaurantName}</i>
+        <h1 className="w-36 left-5  relative font-2xl text-red-800">{dish.foodPartner.Address}</h1>
+        <h1 className=" w-36 left-5 relative font-2xl font-bold">{dish.foodPartner.City}</h1>
+        </div></Link>
+        ) 
+      })}</div>
        <div className="flex flex-wrap w-screen  justify-center">
       {data && data.map((dish,index)=>{
         return(
