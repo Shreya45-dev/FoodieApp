@@ -31,12 +31,7 @@ const id = fp?._id;
  find()
   
 }, [])
-     const edit=async(id)=>{
-      try{
-        const res=await axios.get(`https://foodieappp.onrender.com/api/food/edit/dish/${id}`,{withCredentials:true})
-        
-      }
-     }
+     
 
 
 

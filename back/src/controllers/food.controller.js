@@ -83,6 +83,15 @@ const editdish=async(req,res)=>{
     })
   }
 }
+const particulardish=async(req,res)=>{
+  const id=req.params.id;
+  const particulardish=await restaurantmodel.findById(id);
+  res.status(200).json({
+    message:"Particular dish fetched successfully",
+    particulardish
+  })
+  
+}
 const foodPartner=await foodPartnerModel.findById(foodPartnerId)
 foodPartner.alldishes.push(dish._id)
 await foodPartner.save()
@@ -288,7 +297,7 @@ const updateOrderStatus = async (req, res) => {
   
 
 
-module.exports={createFood,getFoodItems,createrestaurantdish,allrestaurantwithdish,getintopartnerdish,getintopartnerdish,orderfood,getorderfood,orderfoodbyuser,samedish,like,getRestaurantOrders,updateOrderStatus,delvideo,deldish,representalldish,editdish}
+module.exports={createFood,getFoodItems,createrestaurantdish,allrestaurantwithdish,getintopartnerdish,getintopartnerdish,orderfood,getorderfood,orderfoodbyuser,samedish,like,getRestaurantOrders,updateOrderStatus,delvideo,deldish,representalldish,editdish,particulardish}
 
 
 

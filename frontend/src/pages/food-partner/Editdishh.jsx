@@ -1,11 +1,27 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const Editdishh = () => {
+    
     const[name,setName]=useState('')
     const[description,setDescription]=useState('')
     const[cost,setcost]=useState('')
+    
      const {id}=useParams()
+     useEffect(()=>{
+        const update=async()=>{
+        try{
+            const response=await axios.get(`https://foodieappp.onrender.com/api/food/particulardish/${id}`,{withCredentials:true})
+            setName(response.data.particulardish.name)
+            setDescription(response.data.particulardish.description)
+            setcost(response.data.particulardish.cost)
+        }
+        catch(err){
+            console.log(err)
+        }}
+        update()
+     },[id])
      
      const submithandler=async(e)=>{
         e.preventDefault()
