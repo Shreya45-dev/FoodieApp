@@ -230,7 +230,7 @@ const Home = () => {
   finaallrestaurant()
   }, [])
 
-// query = first.trim().toLowerCase();
+
    
   const handleSearch = (e) => {
     const value = e.target.value;
