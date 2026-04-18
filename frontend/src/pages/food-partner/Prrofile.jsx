@@ -47,6 +47,7 @@ import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import Showfpss from './Showfpss';
 import axios from 'axios';
 import { MdDeleteForever } from "react-icons/md";
+import { useSelector } from 'react-redux';
 
 const Prrofile = () => {
   const fp=useSelector((state)=>state.fpartner.fp);
