@@ -160,7 +160,7 @@ const Home = () => {
    const [searchdata,setsearchdata]=useState([])
       const videoRefs = useRef(new Map());
       const containerRef = useRef(null);
-      const query = first.trim().toLowerCase();
+  
 
 
       useEffect(() => {
