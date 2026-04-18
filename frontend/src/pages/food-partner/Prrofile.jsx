@@ -49,7 +49,8 @@ import axios from 'axios';
 import { MdDeleteForever } from "react-icons/md";
 
 const Prrofile = () => {
-  
+  const fp=useSelector((state)=>state.fpartner.fp);
+  const loginidofuser=fp?._id;
   
   const { id } = useParams();
   const [profile, setProfile] = useState(null);
@@ -109,7 +110,7 @@ const Prrofile = () => {
                
       <>
       <div className="flex item-center justify-between">
-        <h1>{v.name}</h1> {id? <MdDeleteForever  onClick={() => videodel(v._id)} />: ""} </div>
+        <h1>{v.name}</h1> {loginidofuser? <MdDeleteForever  onClick={() => videodel(v._id)} />: ""} </div>
         <video id="hello" src={v.video} muted controls />
       </>
     
