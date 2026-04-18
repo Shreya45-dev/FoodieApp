@@ -63,6 +63,17 @@ const createrestaurantdish=async(req,res)=>{
      image:fileUploadResult.url, 
     
 })
+
+const foodPartner=await foodPartnerModel.findById(foodPartnerId)
+foodPartner.alldishes.push(dish._id)
+await foodPartner.save()
+res.status(200).json({
+  message:"create successfully",
+  dish
+})}
+
+
+
 const editdish=async(req,res)=>{
   try{
     const id=req.params.id;
@@ -92,14 +103,6 @@ const particulardish=async(req,res)=>{
   })
   
 }
-const foodPartner=await foodPartnerModel.findById(foodPartnerId)
-foodPartner.alldishes.push(dish._id)
-await foodPartner.save()
-res.status(200).json({
-  message:"create successfully",
-  dish
-})}
-
 
 
 const allrestaurantwithdish=async(req,res)=>{
