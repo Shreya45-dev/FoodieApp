@@ -1,13 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const Editdishh = () => {
     
     const[name,setName]=useState('')
     const[description,setDescription]=useState('')
     const[cost,setcost]=useState('')
-    
+    const navigate=useNavigate()
      const {id}=useParams()
      useEffect(()=>{
         const update=async()=>{
@@ -32,6 +32,7 @@ const Editdishh = () => {
                 cost:cost},{withCredentials:true})
                 alert('dish updated successfully')
                 console.log(response.data.message)
+                navigate("/alldish")
             
         }
         catch(err){

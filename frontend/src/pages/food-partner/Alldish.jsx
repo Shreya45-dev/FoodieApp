@@ -5,9 +5,10 @@ import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { FaPager, FaPaintRoller } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { MdEdit } from "react-icons/md";
 
 const Alldish = () => {
-
+   
    const fp = useSelector((state) => state.fpartner.fp);
 const id = fp?._id;
   
@@ -63,9 +64,10 @@ const id = fp?._id;
        <div className="flex items-center justify-center flex-wrap gap-4 mt-10">
          {data.map((item)=>{
         return(
-          <div className=" h-[25vh] shadow-2xl w-[15vw] md:w-[10vw] flex flex-col  items-center justify-center" key={item._id}>
-            <img className="h-[15vh] w-[15vw] md:w-[10vw]" src={item.image} />
-            < Link  to={`/edit/dish/${item._id}`} className="bg-green-500 text-white px-4 py-2 rounded mt-2" >Edit</Link>
+          <div className=" h-[40vh] shadow-2xl w-[40vw] md:w-[15vw] flex flex-col  items-center justify-center" key={item._id}>
+            < Link  to={`/edit/dish/${item._id}`} className="px-4 py-2 rounded mt-2 " ><MdEdit/></Link>
+            <img className="h-[25vh] w-[40vw] md:w-[15vw]" src={item.image} />
+          
             
             <h1>{item.name}</h1>
             <h1>{item.description}</h1>
