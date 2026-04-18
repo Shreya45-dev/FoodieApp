@@ -27,7 +27,8 @@ router.get(
 router.get("/delvideo/:id",authMiddleware.authFoodPartnerMiddleware,foodController.delvideo)
 router.put("/api/order/:id",authMiddleware.authFoodPartnerMiddleware,foodController.updateOrderStatus)
 router.delete("/deldish/:id",authMiddleware.authFoodPartnerMiddleware,foodController.deldish)
-router.put('/alldish',authMiddleware.authFoodPartnerMiddleware,foodController.representalldish)
+router.get('/alldish',authMiddleware.authFoodPartnerMiddleware,foodController.representalldish)
+router.put("/edit/dish/:id",authMiddleware.authFoodPartnerMiddleware,foodController.editdish)
 router.get("/particulardish/:id",authMiddleware.authFoodPartnerMiddleware,foodController.particulardish)
 //for frontend
 // react works with npm run dev   

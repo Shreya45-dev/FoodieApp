@@ -70,7 +70,7 @@ const editdish=async(req,res)=>{
   name:req.body.name,
   description:req.body.description,
   cost:req.body.cost
-  } )
+  } ,{new:true})
   res.status(200).json({
     message:"dish updated successfully",
     dish
