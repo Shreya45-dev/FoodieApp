@@ -43,55 +43,65 @@ const Editdishh = () => {
    
 
     
-    <div>
-      
-       <form onSubmit={submithandler} className="flex flex-col gap-4">
+   <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
 
-                   
-                    {/* Name */}
-                    <div>
-                        <label className="block text-gray-700 font-semibold mb-1">Dish Name</label>
-                        <input
-                            type="text"
-                            placeholder="Enter dish name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            className="w-full p-2 rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                        />
-                    </div>
+      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 sm:p-8">
 
-                    {/* Description */}
-                    <div>
-                        <label className="block text-gray-700 font-semibold mb-1">Description</label>
-                        <input
-                            type="text"
-                            placeholder="Enter description"
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
-                            className="w-full p-2 rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                        />
-                    </div>
+        <h2 className="text-2xl font-bold text-center text-purple-600 mb-6">
+          Edit Dish
+        </h2>
 
-                    {/* Cost */}
-                    <div>
-                        <label className="block text-gray-700 font-semibold mb-1">Cost</label>
-                        <input
-                            type="text"
-                            placeholder="Enter cost"
-                            value={cost}
-                            onChange={(e) => setcost(e.target.value)}
-                            className="w-full p-2 rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                        />
-                    </div>
+        <form onSubmit={submithandler} className="flex flex-col gap-4">
 
-                    {/* Submit */}
-                    <button
-                        type="submit"
-                        className="bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 font-bold transition mt-2"
-                    >
-                        Update Dish
-                    </button>
-                </form>
+          {/* Name */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1">
+              Dish Name
+            </label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full p-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+            />
+          </div>
+
+          {/* Description */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1">
+              Description
+            </label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows="3"
+              className="w-full p-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+            />
+          </div>
+
+          {/* Cost */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1">
+              Cost (₹)
+            </label>
+            <input
+              type="number"
+              value={cost}
+              onChange={(e) => setcost(e.target.value)}
+              className="w-full p-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+            />
+          </div>
+
+          {/* Button */}
+          <button
+            type="submit"
+            className="bg-purple-600 text-white py-2 rounded-md font-semibold hover:bg-purple-700 transition duration-200"
+          >
+            Update Dish
+          </button>
+
+        </form>
+      </div>
     </div>
   )
 }
