@@ -63,6 +63,26 @@ const createrestaurantdish=async(req,res)=>{
      image:fileUploadResult.url, 
     
 })
+const editdish=async(req,res)=>{
+  try{
+    const id=req.params.id;
+  const dish=await restaurantmodel.findByIdAndUpdate(id,{
+  name:req.body.name,
+  description:req.body.description,
+  cost:req.body.cost
+  }, { new: true, runValidators: true })
+  res.status(200).json({
+    message:"dish updated successfully",
+    dish
+  })}
+  catch(err){
+    console.log(err)
+    res.status(500).json({
+      message:"error updating dish",
+      error:err.message
+    })
+  }
+}
 const foodPartner=await foodPartnerModel.findById(foodPartnerId)
 foodPartner.alldishes.push(dish._id)
 await foodPartner.save()
@@ -268,7 +288,7 @@ const updateOrderStatus = async (req, res) => {
   
 
 
-module.exports={createFood,getFoodItems,createrestaurantdish,allrestaurantwithdish,getintopartnerdish,getintopartnerdish,orderfood,getorderfood,orderfoodbyuser,samedish,like,getRestaurantOrders,updateOrderStatus,delvideo,deldish,representalldish}
+module.exports={createFood,getFoodItems,createrestaurantdish,allrestaurantwithdish,getintopartnerdish,getintopartnerdish,orderfood,getorderfood,orderfoodbyuser,samedish,like,getRestaurantOrders,updateOrderStatus,delvideo,deldish,representalldish,editdish}
 
 
 

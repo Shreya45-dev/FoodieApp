@@ -15,9 +15,10 @@ import Dishpagesame from '../pages/auth/general/Dishpagesame'
 import FoodPartnerpage from '../pages/food-partner/FoodPartnerpage'
 import MainPage from '../pages/auth/MainPage'
 import Alldish from '../pages/food-partner/Alldish'
+import Editdishh from '../pages/food-partner/Editdishh'
 
 const AppRoutes=()=>{
-    
+
     return(
         <Router>
             <Routes>
@@ -36,6 +37,7 @@ const AppRoutes=()=>{
                 <Route path="/food-partner/restaurantdish/:id" element={<Dishprofile/>}/>
                 <Route path="/dish/:name" element={<Dishpagesame/>}/>
                 <Route path="/alldish" element={<Alldish/>}/>
+                <Route path="/edit/dish/:id" element={<Editdishh/>}/>
 
                 
              

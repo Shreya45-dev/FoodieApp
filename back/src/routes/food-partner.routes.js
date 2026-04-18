@@ -15,6 +15,6 @@ router.get("/:id",
     authMiddleware.authUserMiddleware,
     foodPartnerController.getFoodPartnerById)
 //router.get("api/order/:id",authMiddleware.authFoodPartnerMiddleware,foodController.getRestaurantOrders)
-
+router.get("/edit/dish/:id",authMiddleware.authFoodPartnerMiddleware,foodController.editdish)
 
 module.exports=router
