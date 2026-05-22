@@ -52,7 +52,7 @@ const Searchdish = () => {
     <div className="min-h-screen bg-gray-100 px-3 sm:px-5 md:px-8 py-5">
 
       {/* Search Input */}
-      <div className="w-full flex justify-center mb-6">
+      <div className="w-full flex justify-center  h-[35px] items-center mb-6">
         <input
           type="text"
           value={search}
