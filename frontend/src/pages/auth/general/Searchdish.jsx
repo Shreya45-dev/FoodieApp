@@ -19,9 +19,7 @@ const Searchdish = () => {
         setdata(response.data.dish);
         setsearchdata(response.data.dish);
       } catch (err) {
-        console.log("error");
-        console.log("Status:", err.response?.status);
-        console.log("Data:", err.response?.data);
+        console.log(err);
       } finally {
         setloading(false);
       }
@@ -44,56 +42,57 @@ const Searchdish = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-gray-100 px-3 sm:px-5 md:px-10 py-6">
       
       {/* Heading */}
-      <h1 className="text-3xl font-bold text-center text-red-500 mb-6">
-        Search Your Favorite Dish 🍕
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-red-500 mb-6">
+        Search Dishes 🍔
       </h1>
 
-      {/* Search Bar */}
-      <div className="max-w-2xl mx-auto mb-10">
+      {/* Search Input */}
+      <div className="w-full max-w-3xl mx-auto mb-8">
         <input
           type="text"
           value={search}
           onChange={handleSearch}
           placeholder="Search dishes..."
-          className="w-full p-4 rounded-2xl border border-gray-300 shadow-md focus:ring-2 focus:ring-red-400 outline-none bg-white"
+          className="w-full p-3 sm:p-4 rounded-xl border border-gray-300 shadow-md focus:ring-2 focus:ring-red-400 outline-none text-sm sm:text-base"
         />
       </div>
 
       {/* Loading */}
       {loading ? (
-        <div className="text-center text-xl font-semibold text-gray-600">
-          Loading dishes...
+        <div className="text-center text-lg sm:text-xl font-semibold">
+          Loading...
         </div>
       ) : (
         <>
-          {/* Empty State */}
+          {/* No Data */}
           {searchdata.length === 0 ? (
-            <div className="text-center text-gray-500 text-xl">
+            <div className="text-center text-gray-500 text-lg">
               No dishes found 😔
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-7">
+              
               {searchdata.map((dish, index) => {
                 return (
                   <Link
-                    to={`/food-partner/restaurantdish/${dish.foodPartner._id}`}
                     key={index}
+                    to={`/food-partner/restaurantdish/${dish.foodPartner._id}`}
                   >
-                    <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
 
                       {/* Image */}
                       <img
-                        className="h-52 w-full object-cover"
                         src={dish.image}
                         alt={dish.name}
+                        className="w-full h-44 sm:h-48 md:h-52 object-cover"
                       />
 
                       {/* Content */}
                       <div className="p-4">
-                        <h1 className="text-xl font-bold text-gray-800">
+                        <h1 className="font-bold text-lg sm:text-xl text-gray-800 truncate">
                           {dish.name}
                         </h1>
 
@@ -101,16 +100,16 @@ const Searchdish = () => {
                           {dish.description}
                         </p>
 
-                        <div className="mt-4">
-                          <h2 className="text-green-700 font-semibold">
+                        <div className="mt-4 space-y-1">
+                          <h2 className="text-green-700 font-semibold text-sm sm:text-base">
                             {dish.foodPartner.restaurantName}
                           </h2>
 
-                          <p className="text-red-500 text-sm">
+                          <p className="text-red-500 text-xs sm:text-sm">
                             {dish.foodPartner.Address}
                           </p>
 
-                          <p className="text-gray-700 font-medium">
+                          <p className="text-gray-700 font-medium text-sm">
                             {dish.foodPartner.City}
                           </p>
                         </div>
@@ -119,6 +118,7 @@ const Searchdish = () => {
                   </Link>
                 );
               })}
+
             </div>
           )}
         </>
