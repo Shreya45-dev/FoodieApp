@@ -280,7 +280,7 @@ const Home = () => {
    <i className="text-4xl font-bold text-red-800">
     FoodieApp
   </i>
-    <div className="flex">
+    <div className="flex gap-2">
   <Link className="relative" to="/oyee">
     <FaUser className="h-8 w-8 right-2 ml-20"/>
   </Link>
