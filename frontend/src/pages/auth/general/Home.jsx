@@ -282,7 +282,7 @@ const Home = () => {
   </i>
     <div className="flex gap-2">
   <Link className="relative" to="/oyee">
-    <FaUser className="h-8 w-8 right-2 ml-20"/>
+    <FaUser className="h-8 w-8 right-5 ml-20"/>
   </Link>
     <Link to="/searchdish"><FaSearch className="h-8 w-8 right-2 ml-20" /></Link>
    
