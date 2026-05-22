@@ -1,12 +1,12 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Searchdish = () => {
-  const [search, setsearch] = useState("");
-  const [searchdata, setsearchdata] = useState([]);
-  const [data, setdata] = useState([]);
-  const [loading, setloading] = useState(true);
+
+  const [search, setsearch] = useState("")
+  const [searchdata, setsearchdata] = useState([])
+  const [data, setdata] = useState("")
 
   useEffect(() => {
     const finaallrestaurant = async () => {
@@ -14,19 +14,25 @@ const Searchdish = () => {
         const response = await axios.get(
           "https://foodieappp.onrender.com/api/food-partner/alldishwithrestaurant",
           { withCredentials: true }
-        );
+        )
 
-        setdata(response.data.dish);
-        setsearchdata(response.data.dish);
-      } catch (err) {
-        console.log(err);
-      } finally {
-        setloading(false);
+        console.log(response.data.dish)
+        setdata(response.data.dish)
+
       }
-    };
+      catch (err) {
+        console.log("error")
+        console.log("Status:", err.response?.status);
+        console.log("Data:", err.response?.data);
+        console.log("Headers:", err.response?.headers);
+        console.log("Config:", err.config);
+      }
+    }
 
-    finaallrestaurant();
-  }, []);
+    finaallrestaurant()
+  }, [])
+
+
 
   const handleSearch = (e) => {
     const value = e.target.value;
@@ -41,90 +47,77 @@ const Searchdish = () => {
     setsearchdata(searching);
   };
 
+
   return (
-    <div className="min-h-screen bg-gray-100 px-3 sm:px-5 md:px-10 py-6">
-      
-      {/* Heading */}
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-red-500 mb-6">
-        Search Dishes 🍔
-      </h1>
+    <div className="min-h-screen bg-gray-100 px-3 sm:px-5 md:px-8 py-5">
 
       {/* Search Input */}
-      <div className="w-full max-w-3xl mx-auto mb-8">
+      <div className="w-full flex justify-center mb-6">
         <input
           type="text"
           value={search}
           onChange={handleSearch}
           placeholder="Search dishes..."
-          className="w-full p-3 sm:p-4 rounded-xl border border-gray-300 shadow-md focus:ring-2 focus:ring-red-400 outline-none text-sm sm:text-base"
+          className="w-full sm:w-[90%] md:w-[70%] lg:w-[50%] p-3 border rounded-lg shadow focus:ring-2 focus:ring-red-400 outline-none text-sm sm:text-base"
         />
       </div>
 
-      {/* Loading */}
-      {loading ? (
-        <div className="text-center text-lg sm:text-xl font-semibold">
-          Loading...
-        </div>
-      ) : (
-        <>
-          {/* No Data */}
-          {searchdata.length === 0 ? (
-            <div className="text-center text-gray-500 text-lg">
-              No dishes found 😔
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-7">
-              
-              {searchdata.map((dish, index) => {
-                return (
-                  <Link
-                    key={index}
-                    to={`/food-partner/restaurantdish/${dish.foodPartner._id}`}
-                  >
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
 
-                      {/* Image */}
-                      <img
-                        src={dish.image}
-                        alt={dish.name}
-                        className="w-full h-44 sm:h-48 md:h-52 object-cover"
-                      />
+      {/* Dish Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
 
-                      {/* Content */}
-                      <div className="p-4">
-                        <h1 className="font-bold text-lg sm:text-xl text-gray-800 truncate">
-                          {dish.name}
-                        </h1>
+        {searchdata && searchdata.map((dish, index) => {
+          return (
 
-                        <p className="text-gray-500 text-sm mt-2 line-clamp-2">
-                          {dish.description}
-                        </p>
+            <Link
+              to={`/food-partner/restaurantdish/${dish.foodPartner._id}`}
+              key={index}
+              className="w-full flex justify-center"
+            >
 
-                        <div className="mt-4 space-y-1">
-                          <h2 className="text-green-700 font-semibold text-sm sm:text-base">
-                            {dish.foodPartner.restaurantName}
-                          </h2>
+              <div className='w-full max-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300'>
 
-                          <p className="text-red-500 text-xs sm:text-sm">
-                            {dish.foodPartner.Address}
-                          </p>
+                {/* Image */}
+                <img
+                  className="h-48 sm:h-52 w-full object-cover"
+                  src={dish.image}
+                  alt={dish.name}
+                />
 
-                          <p className="text-gray-700 font-medium text-sm">
-                            {dish.foodPartner.City}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
+                {/* Content */}
+                <div className="p-4">
 
-            </div>
-          )}
-        </>
-      )}
+                  <h1 className="font-bold text-lg text-gray-800 truncate">
+                    {dish.name}
+                  </h1>
+
+                  <h1 className="text-gray-500 text-sm mt-2 line-clamp-2">
+                    {dish.description}
+                  </h1>
+
+                  <i className="block text-green-700 font-semibold mt-3 text-sm sm:text-base">
+                    {dish.foodPartner.restaurantName}
+                  </i>
+
+                  <h1 className="text-red-500 text-sm mt-1 line-clamp-1">
+                    {dish.foodPartner.Address}
+                  </h1>
+
+                  <h1 className="font-bold text-gray-700 mt-1 text-sm sm:text-base">
+                    {dish.foodPartner.City}
+                  </h1>
+
+                </div>
+              </div>
+
+            </Link>
+          )
+        })}
+
+      </div>
+
     </div>
-  );
-};
+  )
+}
 
-export default Searchdish;
+export default Searchdish
