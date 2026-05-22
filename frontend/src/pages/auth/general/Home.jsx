@@ -150,6 +150,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import  {Link, useNavigate} from 'react-router-dom'
 import './i.css'
+ import { FaSearch } from "react-icons/fa";
 
 import { FaUser } from "react-icons/fa"
 const Home = () => {
@@ -275,13 +276,20 @@ const Home = () => {
 
     <div className="h-screen  w-screen">
      <div className="w-screen flex items-center justify-between h-20 fixed top-0 left-0 z-50 bg-white shadow-md">
+  
+   <i className="text-4xl font-bold text-red-800">
+    FoodieApp
+  </i>
+    <div className="flex">
   <Link className="relative" to="/oyee">
     <FaUser className="h-8 w-8 right-2 ml-20"/>
   </Link>
+    <Link to="/searchdish"><FaSearch className="h-8 w-8 right-2 ml-20" /></Link>
+   
+ 
 
-  <i className="text-4xl font-bold text-red-800">
-    FoodieApp
-  </i>
+
+  </div>
 </div>
 <div className="h-20">
 
@@ -290,15 +298,8 @@ const Home = () => {
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7TH5E9B6zrUEcGiI6s0YZllGGXL9Ye9Qyg&s"/>
       <h1 className="md:text-[60px] text-[40px] text-purple-800 font-bold">Delicious Pizza</h1></div>
        <div className="flex justify-center overflow-y-auto  overflow-x-hidden flex-wrap">
-         <Link to="/searchdish">Search Dishes</Link>
-        <input
-        type="text"
-        value={search}
-        onChange={handleSearch}
-        placeholder="Search dishes..."
        
-        className="w-full p-3 border rounded-lg shadow focus:ring-2 focus:ring-red-400 outline-none"
-      />  
+      
        
       {dishes.map((dish,index)=>{
         return(
